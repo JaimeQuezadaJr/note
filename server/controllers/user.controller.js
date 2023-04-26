@@ -47,3 +47,8 @@ const login = async (req,res) => {
         }
     }
 };
+
+const logout = (req, res) => {
+    res.clearCookie('userToken');
+    res.json({ successMessage: 'User logged out' });
+};
