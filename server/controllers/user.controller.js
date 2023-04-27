@@ -83,3 +83,12 @@ const deleteUser = (req, res) => {
         res.status(400).json({ message: 'something went wrong in delete user', error: err });
       });
   };
+
+  module.exports = {
+    register,
+    login,
+    logout,
+    getLoggedInUser,
+    findAllUsers,
+    deleteUser,
+};
