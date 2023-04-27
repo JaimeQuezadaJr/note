@@ -72,3 +72,14 @@ const findAllUsers = (req, res) => {
             res.status(400).json({ message: 'Something went wrong', error: err })
         })
 };
+
+const deleteUser = (req, res) => {
+    User.deleteOne({ _id: req.params.id })
+      .then((user) => {
+        res.json(user);
+      })
+      .catch((err) => {
+        console.log('ERROR IN delete user', err);
+        res.status(400).json({ message: 'something went wrong in delete user', error: err });
+      });
+  };
