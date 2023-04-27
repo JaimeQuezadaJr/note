@@ -62,3 +62,13 @@ const getLoggedInUser = async (req, res) => {
         res.status(401).json({ error });
     }
 };
+
+const findAllUsers = (req, res) => {
+    User.find()
+        .then((allUsers) => {
+            res.json(allUsers)
+        })
+        .catch((err) => {
+            res.status(400).json({ message: 'Something went wrong', error: err })
+        })
+};
