@@ -18,3 +18,5 @@ app.use(cookieParser());
 app.use(cors({ origin: 'http://localhost:3000', credentials: true}));
 
 // routes for login & registration
+const userRoutes = require('./routes/user.routes');
+userRoutes(app);
